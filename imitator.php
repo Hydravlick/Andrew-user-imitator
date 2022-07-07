@@ -40,7 +40,7 @@ while (1) {
         //unset array
         $array = [];
     }
-
+    echo "\n connection status: ". connection_status() ."\n";
     // juggling around
     $longitude = $longitude + round(randomFloat(-0.001, 0.001), 4);
     $latitude = $latitude + round(randomFloat(-0.001, 0.001), 4);
