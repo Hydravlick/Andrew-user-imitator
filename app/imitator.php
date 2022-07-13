@@ -7,7 +7,7 @@ function randomFloat($min = 0, $max = 1)
 
 // base values
 date_default_timezone_set("Europe/Kiev");
-$hostname = "frontend.test";
+$hostname = "nginx";
 $url = "http://" . $hostname . "/location/add";
 $longitude = round(randomFloat(26.5546, 26.6134), 4);
 $latitude = round(randomFloat(48.6503, 48.7339), 4);
@@ -22,7 +22,6 @@ while (1) {
     );
     // save data into array until sent as request
     $array[] = $data;
-    print_r($data);
     //check if connection is alive
     if (connection_status() == 0) {
         $options = array(
@@ -40,7 +39,6 @@ while (1) {
         //unset array
         $array = [];
     }
-    echo "\n connection status: ". connection_status() ."\n";
     // juggling around
     $longitude = $longitude + round(randomFloat(-0.001, 0.001), 4);
     $latitude = $latitude + round(randomFloat(-0.001, 0.001), 4);
